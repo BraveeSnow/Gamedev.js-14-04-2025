@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class DragBehaviour : MonoBehaviour
 {
@@ -11,11 +12,12 @@ public class DragBehaviour : MonoBehaviour
     private Rigidbody2D rigidbody;
 
     public BoxCollider2D trashCollider;
-    public BoxCollider2D plateCollider;
+    public CircleCollider2D plateCollider;
 
     public GameObject shadowObject;
 
     private CookBehaviour cookBehaviour;
+
 
     private void Awake()
     {
@@ -47,8 +49,22 @@ public class DragBehaviour : MonoBehaviour
     private void OnMouseUp()
     {
         SetDragging(false);
-        rigidbody.MovePosition(new Vector2(transform.position.x, transform.position.y - liftOffsetY));
+        rigidbody.position = new Vector2(transform.position.x, transform.position.y - liftOffsetY);
 
+        if (collider.IsTouching(trashCollider))
+        {
+            resetMeat();
+        }
+        else if (collider.IsTouching(plateCollider))
+        {
+            resetMeat();
+        }
+    }
+
+    private void resetMeat()
+    {
+        rigidbody.MovePosition(new Vector2(-7.13f, 0));
+        StartCoroutine(meatReset());
     }
 
     private void SetDragging(bool value)
@@ -60,9 +76,15 @@ public class DragBehaviour : MonoBehaviour
     private void LateUpdate()
     {
 
-        if (collider.IsTouching(trashCollider))
-        {
-            
-        }
     }
+
+    IEnumerator meatReset()
+    {
+        yield return new WaitForFixedUpdate();
+        gameObject.SetActive(false);
+        cookBehaviour.SetCooking(false);
+        cookBehaviour.SetDoneness(0);
+        shadowObject.SetActive(false);
+    }
+    
 }

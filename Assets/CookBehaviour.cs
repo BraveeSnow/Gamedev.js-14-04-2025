@@ -48,7 +48,7 @@ public class CookBehaviour : MonoBehaviour
         sizzleObject.SetActive(value);
     }
 
-    private void SetDoneness(float value)
+    public void SetDoneness(float value)
     {
         doneness = value;
         cookedSprite.color = new Color(1, 1, 1, Mathf.Min(doneness / idealdoneness, 1));
