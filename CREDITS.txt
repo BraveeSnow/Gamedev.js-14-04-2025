@@ -1,0 +1,15 @@
+FONTS
+-----
+
+Sour Gummy - https://fonts.google.com/specimen/Sour+Gummy
+License - OFL-1.1
+
+
+MUSIC
+-----
+
+Lonely Witch - https://opengameart.org/content/loop-lonely-witch
+License - CC-BY-3.0
+
+Busy Day At The Market - https://opengameart.org/content/busy-day-at-the-market
+License - CC-BY-3.0

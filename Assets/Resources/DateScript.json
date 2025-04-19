@@ -1,0 +1,25 @@
+[
+  {
+    "prompt": "What do you think about the steak here?",
+    "responses": [
+      {
+        "response": "They're lovely.",
+        "score": 2
+      },
+      {
+        "response": "Pretty tender.",
+        "score": 1
+      },
+      {
+        "response": "They're okay, nothing special.",
+        "score": 0
+      },
+      {
+        "response": "I've had better.",
+        "score": -1
+      }
+    ],
+    "good": "I think so too!",
+    "bad": "Well, I think they're rather nice..."
+  }
+]
