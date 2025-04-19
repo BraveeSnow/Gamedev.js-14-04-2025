@@ -7,14 +7,16 @@ public class CookBehaviour : MonoBehaviour
 
     public AudioSource sizzleSound;
 
+    public GameObject sizzleObject;
+
     /// <summary>
     /// Is set by another script
     /// </summary>
     public bool cooking;
 
     private float doneness;
-    private readonly float idealdoneness = 700;
-    private readonly float maxdoneness = 1500;
+    private readonly float idealdoneness = 350;
+    private readonly float maxdoneness = 700;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -43,6 +45,7 @@ public class CookBehaviour : MonoBehaviour
     {
         cooking = value;
         sizzleSound.volume = (value ? 1 : 0);
+        sizzleObject.SetActive(value);
     }
 
     private void SetDoneness(float value)
