@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Newtonsoft.Json;
 using TMPro;
@@ -23,6 +24,7 @@ public class DateScriptHandler : MonoBehaviour
     public void LoadRandomScript()
     {
         _currentScript = _dateScripts[Random.Range(0, _dateScripts.Count)];
+        _currentScript.responses = _currentScript.responses.OrderBy(_ => Random.value).ToList();
         _dialogueText.text = _currentScript.prompt;
 
         for (int i = 0; i < _responseButtons.Count; i++)
@@ -31,6 +33,15 @@ public class DateScriptHandler : MonoBehaviour
         }
 
         ShowResponseButtons(true);
+    }
+
+    // Callback for user response buttons, do not directly call
+    // Choice is 0-indexed
+    public void SelectChoice(int choice)
+    {
+        Debug.Log(choice);
+        int score = _currentScript.responses[choice].score;
+        Debug.Log(score);
     }
 
     private void ShowResponseButtons(bool toShow)
