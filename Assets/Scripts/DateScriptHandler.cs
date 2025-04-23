@@ -8,12 +8,18 @@ using System.Collections;
 public class DateScriptHandler : MonoBehaviour
 {
     // Data
-    [SerializeField] private List<Script> _dateScripts;
-    [SerializeField] private Dictionary<string, List<string>> _excuses;
+    private List<Script> _dateScripts;
+    private Dictionary<string, List<string>> _excuses;
 
-    // Game object references
+    [Header("Object References")]
     [SerializeField] private TextMeshProUGUI _dialogueText;
     [SerializeField] private List<GameObject> _responseButtons;
+
+    [Header("Adjustable Fields")]
+    [SerializeField]
+    [Range(0.01F, 0.05F)] private float _textSpeed;
+    [SerializeField]
+    [Range(1F, 5F)] private float _responseDelay;
 
     // State
     private Script _currentScript;
@@ -27,7 +33,7 @@ public class DateScriptHandler : MonoBehaviour
         // Load excuses from Excuses.json
         TextAsset excusesJson = Resources.Load<TextAsset>("Excuses");
         _excuses = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(excusesJson.text);
-        
+
         ShowResponseButtons(false);
         LoadRandomScript();
     }
@@ -43,14 +49,13 @@ public class DateScriptHandler : MonoBehaviour
 
         _currentScript = script;
         _currentScript.responses = _currentScript.responses.OrderBy(_ => Random.value).ToList();
-        _dialogueText.text = _currentScript.prompt;
+        //_dialogueText.text = _currentScript.prompt;
+        StartCoroutine(AnimateText(_currentScript.prompt, true));
 
         for (int i = 0; i < _responseButtons.Count; i++)
         {
             _responseButtons[i].GetComponentInChildren<TextMeshProUGUI>().text = _currentScript.responses[i].response;
         }
-
-        ShowResponseButtons(true);
     }
 
     // Callback for user response buttons, do not directly call
@@ -60,12 +65,9 @@ public class DateScriptHandler : MonoBehaviour
         ShowResponseButtons(false);
 
         int score = _currentScript.responses[choice].score;
-        _dialogueText.text = score > 0 ? _currentScript.goodResponse : _currentScript.badResponse;
-        Debug.Log(_dialogueText.text);
+        StartCoroutine(AnimateText(score > 0 ? _currentScript.goodResponse : _currentScript.badResponse, false));
 
         // TODO: make score impact balance bar
-
-        StartCoroutine(DelayUntilLoadNextScript());
     }
 
     private void ShowResponseButtons(bool toShow)
@@ -73,9 +75,29 @@ public class DateScriptHandler : MonoBehaviour
         _responseButtons.ForEach((button) => button.SetActive(toShow));
     }
 
+    private IEnumerator AnimateText(string text, bool isPrompt)
+    {
+        _dialogueText.text = "";
+
+        foreach (char c in text)
+        {
+            _dialogueText.text += c;
+            yield return new WaitForSeconds(_textSpeed);
+        }
+
+        if (isPrompt)
+        {
+            ShowResponseButtons(true);
+        }
+        else
+        {
+            StartCoroutine(DelayUntilLoadNextScript());
+        }
+    }
+
     private IEnumerator DelayUntilLoadNextScript()
     {
-        yield return new WaitForSeconds(3F);
+        yield return new WaitForSeconds(_responseDelay);
         LoadRandomScript();
     }
 

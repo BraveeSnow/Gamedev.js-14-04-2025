@@ -2142,12 +2142,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cbb312ef474a8347b1c62ed505a6f8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _dateScripts: []
   _dialogueText: {fileID: 374786129}
   _responseButtons:
   - {fileID: 497871698}
   - {fileID: 1535748418}
   - {fileID: 1402125941}
   - {fileID: 1828575835}
+  _textSpeed: 0.02
+  _responseDelay: 3
 --- !u!1 &1828575835
 GameObject:
   m_ObjectHideFlags: 0
