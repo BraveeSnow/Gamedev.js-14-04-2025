@@ -142,7 +142,7 @@
         "score": 0
       },
       {
-        "response": "I didn't even realize — I'm just enjoying the company.",
+        "response": "I didn't even realize. I'm just enjoying the company.",
         "score": 1
       },
       {
@@ -177,8 +177,8 @@
       }
     ],
     "replies": {
-      "good": "I thought you might like it — I actually checked the place's playlist online.",
-      "bad": "Okay, yeah… maybe the music's not doing us any favors."
+      "good": "I thought you might like it! I was hoping it would set the mood.",
+      "bad": "Okay, yeah... maybe the music's not doing us any favors."
     }
   },
   {
@@ -190,7 +190,7 @@
         "score": 2
       },
       {
-        "response": "Depends on the lighting… but leaning romantic.",
+        "response": "Depends on the lighting... but leaning romantic.",
         "score": 1
       },
       {
@@ -216,7 +216,7 @@
         "score": 2
       },
       {
-        "response": "I could see it going either way — but it's working tonight.",
+        "response": "I could see it going either way, but it's working tonight.",
         "score": 1
       },
       {
@@ -224,7 +224,7 @@
         "score": 0
       },
       {
-        "response": "Honestly? This screams 'office birthday lunch'.",
+        "response": "Honestly? This screams 'office birthday lunch.'",
         "score": -2
       }
     ],
@@ -246,7 +246,7 @@
         "score": 1
       },
       {
-        "response": "I didn't really try, but hey — appreciate it.",
+        "response": "I didn't really try. but hey, I appreciate it.",
         "score": 0
       },
       {
