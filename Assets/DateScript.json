@@ -1,27 +1,392 @@
 [
-	{
-		"prompt": "What do you think about the steak here?",
-		"responses": [
-			{
-				"response": "They're lovely.",
-				"score": 2
-			},
-			{
-				"response": "Pretty tender.",
-				"score": 1
-			},
-			{
-				"response": "They're okay, nothing special.",
-				"score": 0
-			},
-			{
-				"response": "I've had better.",
-				"score": -1
-			}
-		],
-		"replies": {
-			"good": "I think so too!",
-			"bad": "Well, I think they're rather nice..."
-		}
-	}
+  {
+    "prompt": "What do you think about the steak here?",
+    "attribute": "food",
+    "responses": [
+      {
+        "response": "They're lovely.",
+        "score": 2
+      },
+      {
+        "response": "Pretty tender.",
+        "score": 1
+      },
+      {
+        "response": "They're okay, nothing special.",
+        "score": 0
+      },
+      {
+        "response": "I've had better.",
+        "score": -1
+      }
+    ],
+    "replies": {
+      "good": "Right? I was hoping you'd like them too.",
+      "bad": "Well, I think they're rather nice..."
+    }
+  },
+  {
+    "prompt": "Were you just being polite, or did you actually like the appetizer?",
+    "attribute": "food",
+    "responses": [
+      {
+        "response": "Not gonna lie, it was really good. I'd order it again.",
+        "score": 2
+      },
+      {
+        "response": "Yeah, I liked it more than I expected.",
+        "score": 1
+      },
+      {
+        "response": "It was fine. Not amazing, not awful.",
+        "score": 0
+      },
+      {
+        "response": "I was totally faking it. That thing was weird.",
+        "score": -2
+      }
+    ],
+    "replies": {
+      "good": "Okay, good! I wasn't sure if I was imagining how good it was.",
+      "bad": "Haha… I *thought* your face looked suspicious."
+    }
+  },
+  {
+    "prompt": "If you could only eat one thing from this menu forever, what would it be?",
+    "attribute": "food",
+    "responses": [
+      {
+        "response": "The steak. I'd die happy with that.",
+        "score": 2
+      },
+      {
+        "response": "Probably the burger. Solid choice every time.",
+        "score": 1
+      },
+      {
+        "response": "Ugh, tough call. They're all mediocre.",
+        "score": -1
+      },
+      {
+        "response": "Nothing here. I'd rather fast.",
+        "score": -2
+      }
+    ],
+    "replies": {
+      "good": "Respect. That's a bold but delicious forever meal.",
+      "bad": "Ouch. Remind me not to bring you here again, ever."
+    }
+  },
+  {
+    "prompt": "I'm just realizing that this restaurant is quite clean. What do you think?",
+    "attribute": "service",
+    "responses": [
+      {
+        "response": "Spotless. Really impressive!",
+        "score": 2
+      },
+      {
+        "response": "Looks decently clean.",
+        "score": 1
+      },
+      {
+        "response": "Not very clean, honestly.",
+        "score": -1
+      },
+      {
+        "response": "These tables are gross.",
+        "score": -2
+      }
+    ],
+    "replies": {
+      "good": "I'm glad you noticed — I was trying to pick a nice spot.",
+      "bad": "Ugh, I didn't think you'd notice... sorry."
+    }
+  },
+  {
+    "prompt": "What do you think of the service so far?",
+    "attribute": "service",
+    "responses": [
+      {
+        "response": "Incredible. So friendly and fast.",
+        "score": 2
+      },
+      {
+        "response": "Pretty solid, no complaints.",
+        "score": 1
+      },
+      {
+        "response": "They seem busy, I get it.",
+        "score": 0
+      },
+      {
+        "response": "Service is really slow today.",
+        "score": -2
+      }
+    ],
+    "replies": {
+      "good": "I'm glad! I wanted tonight to feel a little special.",
+      "bad": "Yikes, not the impression I was hoping to make..."
+    }
+  },
+  {
+    "prompt": "Okay, be honest — have we been waiting *too* long for everything, or am I just impatient?",
+    "attribute": "service",
+    "responses": [
+      {
+        "response": "No, you're totally right. It's been kind of slow.",
+        "score": -1
+      },
+      {
+        "response": "I noticed it too, but it's not bothering me.",
+        "score": 0
+      },
+      {
+        "response": "I didn't even realize — I'm just enjoying the company.",
+        "score": 1
+      },
+      {
+        "response": "Honestly? I'd wait all night if it means sitting here with you.",
+        "score": 2
+      }
+    ],
+    "replies": {
+      "good": "That might be the smoothest thing anyone's said to me all year.",
+      "bad": "Ugh, right? I was starting to feel like I aged a year between courses."
+    }
+  },  
+  {
+    "prompt": "What do you think about the music that's playing?",
+    "attribute": "ambience",
+    "responses": [
+      {
+        "response": "Love it. Feels like it matches the whole vibe.",
+        "score": 2
+      },
+      {
+        "response": "Pretty chill. I don't mind it at all.",
+        "score": 1
+      },
+      {
+        "response": "It's kinda random, but not distracting.",
+        "score": 0
+      },
+      {
+        "response": "What is this playlist? It's giving me whiplash.",
+        "score": -2
+      }
+    ],
+    "replies": {
+      "good": "I thought you might like it — I actually checked the place's playlist online.",
+      "bad": "Okay, yeah… maybe the music's not doing us any favors."
+    }
+  },
+  {
+    "prompt": "If we were the only people here, would it feel romantic or creepy?",
+    "attribute": "ambience",
+    "responses": [
+      {
+        "response": "Romantic, easily. It's got that quiet charm.",
+        "score": 2
+      },
+      {
+        "response": "Depends on the lighting… but leaning romantic.",
+        "score": 1
+      },
+      {
+        "response": "Maybe a bit too quiet. Creeps me out a little.",
+        "score": 0
+      },
+      {
+        "response": "Total horror movie vibes. We'd be doomed.",
+        "score": -2
+      }
+    ],
+    "replies": {
+      "good": "Okay, so I *can* imagine us renting the whole place.",
+      "bad": "Guess I'll scratch 'private dinner here' off my bucket list."
+    }
+  },
+  {
+    "prompt": "Does this place feel like a date spot, or more like somewhere you'd take your coworkers?",
+    "attribute": "ambience",
+    "responses": [
+      {
+        "response": "Definitely a date spot. It's got that vibe.",
+        "score": 2
+      },
+      {
+        "response": "I could see it going either way — but it's working tonight.",
+        "score": 1
+      },
+      {
+        "response": "Hmm… feels a little too formal for a date, maybe.",
+        "score": 0
+      },
+      {
+        "response": "Honestly? This screams 'office birthday lunch'.",
+        "score": -2
+      }
+    ],
+    "replies": {
+      "good": "Okay, good! I was really hoping it'd feel intentional.",
+      "bad": "Brutal... next time I'll pick somewhere with fairy lights and acoustic covers."
+    }
+  },
+  {
+    "prompt": "You look really nice tonight, by the way.",
+    "attribute": "appearance",
+    "responses": [
+      {
+        "response": "Aw, thank you! That's really sweet.",
+        "score": 2
+      },
+      {
+        "response": "Thanks! You've dressed up pretty well yourself.",
+        "score": 1
+      },
+      {
+        "response": "I didn't really try, but hey — appreciate it.",
+        "score": 0
+      },
+      {
+        "response": "Oh. Uh… thanks, I guess.",
+        "score": -1
+      }
+    ],
+    "replies": {
+      "good": "I mean it. You've got this glow tonight.",
+      "bad": "Haha... I'll stop embarrassing you now."
+    }
+  },
+  {
+    "prompt": "So, um, what do you think of my outfit?",
+    "attribute": "appearance",
+    "responses": [
+      {
+        "response": "I love it! You look amazing.",
+        "score": 2
+      },
+      {
+        "response": "It's nice, really suits you.",
+        "score": 1
+      },
+      {
+        "response": "It's okay, I guess.",
+        "score": 0
+      },
+      {
+        "response": "Not my favorite look on you.",
+        "score": -1
+      }
+    ],
+    "replies": {
+      "good": "I thought you'd like it! I picked it out just for you.",
+      "bad": "Oh... I was hoping you'd like it."
+    }
+  },
+  {
+    "prompt": "Umm, do I have something in between my teeth?",
+    "attribute": "appearance",
+    "responses": [
+      {
+        "response": "Nope, you look great. I checked the moment you smiled.",
+        "score": 2
+      },
+      {
+        "response": "You're good. I was wondering the same about me though.",
+        "score": 1
+      },
+      {
+        "response": "A little bit, yeah. Just there. No big deal.",
+        "score": 0
+      },
+      {
+        "response": "Uh… yeah. It's been there a *while*.",
+        "score": -2
+      }
+    ],
+    "replies": {
+      "good": "Thanks, you're a lifesaver. I think I'm able to trust you more now.",
+      "bad": "Oh no. That's going to haunt me until I sleep."
+    }
+  },
+  {
+    "prompt": "Can you be honest with me? How awkward has the date been so far?",
+    "attribute": "social",
+    "responses": [
+      {
+        "response": "Not awkward at all! I'm having a great time.",
+        "score": 2
+      },
+      {
+        "response": "It's been a little awkward, but in a cute way.",
+        "score": 1
+      },
+      {
+        "response": "It's been a bit awkward, but I think it's okay.",
+        "score": 0
+      },
+      {
+        "response": "Honestly? It's been super awkward.",
+        "score": -2
+      }
+    ],
+    "replies": {
+      "good": "I'm so glad to hear that! I was getting worried.",
+      "bad": "Oh no... I thought we were doing okay."
+    }
+  },
+  {
+    "prompt": "Do you think that our waitress has a thing for you? I've caught her looking at you a few times...",
+    "attribute": "social",
+    "responses": [
+      {
+        "response": "Haha, I think she was just being friendly.",
+        "score": 2
+      },
+      {
+        "response": "Maybe? I didn't really notice.",
+        "score": 1
+      },
+      {
+        "response": "I don't know, but it was a little weird.",
+        "score": 0
+      },
+      {
+        "response": "Yeah, that was super awkward.",
+        "score": -2
+      }
+    ],
+    "replies": {
+      "good": "I thought so too! I was getting a little jealous.",
+      "bad": "Haha, yeah... I was trying to ignore it."
+    }
+  },
+  {
+    "prompt": "Do I talk too much when I'm nervous?",
+    "attribute": "social",
+    "responses": [
+      {
+        "response": "Honestly? It's super charming.",
+        "score": 2
+      },
+      {
+        "response": "Maybe a little, but it's kinda cute.",
+        "score": 1
+      },
+      {
+        "response": "You do talk a lot, but I'm listening.",
+        "score": 0
+      },
+      {
+        "response": "Yeah, it's… a lot. I can barely get a word in.",
+        "score": -2
+      }
+    ],
+    "replies": {
+      "good": "Okay good, because I was spiraling a bit there.",
+      "bad": "Noted... I'll try to breathe between sentences."
+    }
+  }
 ]
