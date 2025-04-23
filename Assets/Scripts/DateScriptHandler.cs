@@ -6,16 +6,26 @@ using TMPro;
 
 public class DateScriptHandler : MonoBehaviour
 {
+    // Data
     private List<Script> _dateScripts;
+    private Dictionary<string, List<string>> _excuses;
+
+    // Game object references
     [SerializeField] private TextMeshProUGUI _dialogueText;
     [SerializeField] private List<GameObject> _responseButtons;
 
+    // State
     private Script _currentScript;
 
     private void Start()
     {
-        TextAsset json = Resources.Load<TextAsset>("DateScript");
-        _dateScripts = JsonConvert.DeserializeObject<List<Script>>(json.text);
+        // Load dialogue from DateScript.json
+        TextAsset dialogueJson = Resources.Load<TextAsset>("DateScript");
+        _dateScripts = JsonConvert.DeserializeObject<List<Script>>(dialogueJson.text);
+
+        // Load excuses from Excuses.json
+        TextAsset excusesJson = Resources.Load<TextAsset>("Excuses");
+        _excuses = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(excusesJson.text);
         
         ShowResponseButtons(false);
         LoadRandomScript();
@@ -23,7 +33,14 @@ public class DateScriptHandler : MonoBehaviour
 
     public void LoadRandomScript()
     {
-        _currentScript = _dateScripts[Random.Range(0, _dateScripts.Count)];
+    begin:
+        Script script = _dateScripts[Random.Range(0, _dateScripts.Count)];
+        if (script.Equals(_currentScript))
+        {
+            goto begin;
+        }
+
+        _currentScript = script;
         _currentScript.responses = _currentScript.responses.OrderBy(_ => Random.value).ToList();
         _dialogueText.text = _currentScript.prompt;
 
@@ -39,9 +56,9 @@ public class DateScriptHandler : MonoBehaviour
     // Choice is 0-indexed
     public void SelectChoice(int choice)
     {
-        Debug.Log(choice);
-        int score = _currentScript.responses[choice].score;
-        Debug.Log(score);
+        // TODO: make score impact balance bar
+
+        LoadRandomScript();
     }
 
     private void ShowResponseButtons(bool toShow)
@@ -53,6 +70,7 @@ public class DateScriptHandler : MonoBehaviour
     private class Script
     {
         public string prompt;
+        public string attribute;
         public List<Response> responses;
         [JsonProperty("good")] public string goodResponse;
         [JsonProperty("bad")] public string badResponse;
