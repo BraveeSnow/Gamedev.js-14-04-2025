@@ -20,10 +20,8 @@
         "score": -1
       }
     ],
-    "replies": {
-      "good": "Right? I was hoping you'd like them too.",
-      "bad": "Well, I think they're rather nice..."
-    }
+    "goodResponse": "Right? I was hoping you'd like them too.",
+    "badResponse": "Well, I think they're rather nice..."
   },
   {
     "prompt": "Were you just being polite, or did you actually like the appetizer?",
@@ -46,10 +44,8 @@
         "score": -2
       }
     ],
-    "replies": {
-      "good": "Okay, good! I wasn't sure if I was imagining how good it was.",
-      "bad": "Haha… I *thought* your face looked suspicious."
-    }
+    "goodResponse": "Okay, good! I wasn't sure if I was imagining how good it was.",
+    "badResponse": "Haha… I *thought* your face looked suspicious."
   },
   {
     "prompt": "If you could only eat one thing from this menu forever, what would it be?",
@@ -72,10 +68,8 @@
         "score": -2
       }
     ],
-    "replies": {
-      "good": "Respect. That's a bold but delicious forever meal.",
-      "bad": "Ouch. Remind me not to bring you here again, ever."
-    }
+    "goodResponse": "Respect. That's a bold but delicious forever meal.",
+    "badResponse": "Ouch. Remind me not to bring you here again, ever."
   },
   {
     "prompt": "I'm just realizing that this restaurant is quite clean. What do you think?",
@@ -98,10 +92,8 @@
         "score": -2
       }
     ],
-    "replies": {
-      "good": "I'm glad you noticed — I was trying to pick a nice spot.",
-      "bad": "Ugh, I didn't think you'd notice... sorry."
-    }
+    "goodResponse": "I'm glad you noticed — I was trying to pick a nice spot.",
+    "badResponse": "Ugh, I didn't think you'd notice... sorry."
   },
   {
     "prompt": "What do you think of the service so far?",
@@ -124,10 +116,8 @@
         "score": -2
       }
     ],
-    "replies": {
-      "good": "I'm glad! I wanted tonight to feel a little special.",
-      "bad": "Yikes, not the impression I was hoping to make..."
-    }
+    "goodResponse": "I'm glad! I wanted tonight to feel a little special.",
+    "badResponse": "Yikes, not the impression I was hoping to make..."
   },
   {
     "prompt": "Okay, be honest — have we been waiting *too* long for everything, or am I just impatient?",
@@ -150,11 +140,9 @@
         "score": 2
       }
     ],
-    "replies": {
-      "good": "That might be the smoothest thing anyone's said to me all year.",
-      "bad": "Ugh, right? I was starting to feel like I aged a year between courses."
-    }
-  },  
+    "goodResponse": "That might be the smoothest thing anyone's said to me all year.",
+    "badResponse": "Ugh, right? I was starting to feel like I aged a year between courses."
+  },
   {
     "prompt": "What do you think about the music that's playing?",
     "attribute": "ambience",
@@ -176,10 +164,8 @@
         "score": -2
       }
     ],
-    "replies": {
-      "good": "I thought you might like it! I was hoping it would set the mood.",
-      "bad": "Okay, yeah... maybe the music's not doing us any favors."
-    }
+    "goodResponse": "I thought you might like it! I was hoping it would set the mood.",
+    "badResponse": "Okay, yeah... maybe the music's not doing us any favors."
   },
   {
     "prompt": "If we were the only people here, would it feel romantic or creepy?",
@@ -202,10 +188,8 @@
         "score": -2
       }
     ],
-    "replies": {
-      "good": "Okay, so I *can* imagine us renting the whole place.",
-      "bad": "Guess I'll scratch 'private dinner here' off my bucket list."
-    }
+    "goodResponse": "Okay, so I *can* imagine us renting the whole place.",
+    "badResponse": "Guess I'll scratch 'private dinner here' off my bucket list."
   },
   {
     "prompt": "Does this place feel like a date spot, or more like somewhere you'd take your coworkers?",
@@ -228,10 +212,8 @@
         "score": -2
       }
     ],
-    "replies": {
-      "good": "Okay, good! I was really hoping it'd feel intentional.",
-      "bad": "Brutal... next time I'll pick somewhere with fairy lights and acoustic covers."
-    }
+    "goodResponse": "Okay, good! I was really hoping it'd feel intentional.",
+    "badResponse": "Brutal... next time I'll pick somewhere with fairy lights and acoustic covers."
   },
   {
     "prompt": "You look really nice tonight, by the way.",
@@ -254,10 +236,8 @@
         "score": -1
       }
     ],
-    "replies": {
-      "good": "I mean it. You've got this glow tonight.",
-      "bad": "Haha... I'll stop embarrassing you now."
-    }
+    "goodResponse": "I mean it. You've got this glow tonight.",
+    "badResponse": "Haha... I'll stop embarrassing you now."
   },
   {
     "prompt": "So, um, what do you think of my outfit?",
@@ -280,10 +260,8 @@
         "score": -1
       }
     ],
-    "replies": {
-      "good": "I thought you'd like it! I picked it out just for you.",
-      "bad": "Oh... I was hoping you'd like it."
-    }
+    "goodResponse": "I thought you'd like it! I picked it out just for you.",
+    "badResponse": "Oh... I was hoping you'd like it."
   },
   {
     "prompt": "Umm, do I have something in between my teeth?",
@@ -306,10 +284,8 @@
         "score": -2
       }
     ],
-    "replies": {
-      "good": "Thanks, you're a lifesaver. I think I'm able to trust you more now.",
-      "bad": "Oh no. That's going to haunt me until I sleep."
-    }
+    "goodResponse": "Thanks, you're a lifesaver. I think I'm able to trust you more now.",
+    "badResponse": "Oh no. That's going to haunt me until I sleep."
   },
   {
     "prompt": "Can you be honest with me? How awkward has the date been so far?",
@@ -332,10 +308,8 @@
         "score": -2
       }
     ],
-    "replies": {
-      "good": "I'm so glad to hear that! I was getting worried.",
-      "bad": "Oh no... I thought we were doing okay."
-    }
+    "goodResponse": "I'm so glad to hear that! I was getting worried.",
+    "badResponse": "Oh no... I thought we were doing okay."
   },
   {
     "prompt": "Do you think that our waitress has a thing for you? I've caught her looking at you a few times...",
@@ -358,10 +332,8 @@
         "score": -2
       }
     ],
-    "replies": {
-      "good": "I thought so too! I was getting a little jealous.",
-      "bad": "Haha, yeah... I was trying to ignore it."
-    }
+    "goodResponse": "I thought so too! I was getting a little jealous.",
+    "badResponse": "Haha, yeah... I was trying to ignore it."
   },
   {
     "prompt": "Do I talk too much when I'm nervous?",
@@ -384,9 +356,7 @@
         "score": -2
       }
     ],
-    "replies": {
-      "good": "Okay good, because I was spiraling a bit there.",
-      "bad": "Noted... I'll try to breathe between sentences."
-    }
+    "goodResponse": "Okay good, because I was spiraling a bit there.",
+    "badResponse": "Noted... I'll try to breathe between sentences."
   }
 ]

@@ -3,12 +3,13 @@ using System.Linq;
 using UnityEngine;
 using Newtonsoft.Json;
 using TMPro;
+using System.Collections;
 
 public class DateScriptHandler : MonoBehaviour
 {
     // Data
-    private List<Script> _dateScripts;
-    private Dictionary<string, List<string>> _excuses;
+    [SerializeField] private List<Script> _dateScripts;
+    [SerializeField] private Dictionary<string, List<string>> _excuses;
 
     // Game object references
     [SerializeField] private TextMeshProUGUI _dialogueText;
@@ -56,14 +57,26 @@ public class DateScriptHandler : MonoBehaviour
     // Choice is 0-indexed
     public void SelectChoice(int choice)
     {
+        ShowResponseButtons(false);
+
+        int score = _currentScript.responses[choice].score;
+        _dialogueText.text = score > 0 ? _currentScript.goodResponse : _currentScript.badResponse;
+        Debug.Log(_dialogueText.text);
+
         // TODO: make score impact balance bar
 
-        LoadRandomScript();
+        StartCoroutine(DelayUntilLoadNextScript());
     }
 
     private void ShowResponseButtons(bool toShow)
     {
         _responseButtons.ForEach((button) => button.SetActive(toShow));
+    }
+
+    private IEnumerator DelayUntilLoadNextScript()
+    {
+        yield return new WaitForSeconds(3F);
+        LoadRandomScript();
     }
 
     [System.Serializable]
@@ -72,8 +85,8 @@ public class DateScriptHandler : MonoBehaviour
         public string prompt;
         public string attribute;
         public List<Response> responses;
-        [JsonProperty("good")] public string goodResponse;
-        [JsonProperty("bad")] public string badResponse;
+        public string goodResponse;
+        public string badResponse;
     }
 
     [System.Serializable]
