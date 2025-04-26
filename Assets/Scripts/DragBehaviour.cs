@@ -13,6 +13,7 @@ public class DragBehaviour : MonoBehaviour
 
     public BoxCollider2D trashCollider;
     public CircleCollider2D plateCollider;
+    public BoxCollider2D grillCollider;
 
     public GameObject shadowObject;
 
@@ -70,7 +71,14 @@ public class DragBehaviour : MonoBehaviour
     private void SetDragging(bool value)
     {
         dragging = value;
-        cookBehaviour.SetCooking(!value);
+        if (!value && collider.IsTouching(grillCollider))
+        {
+            cookBehaviour.SetCooking(true);
+        }
+        else
+        {
+            cookBehaviour.SetCooking(false);
+        }
     }
 
     private void LateUpdate()
