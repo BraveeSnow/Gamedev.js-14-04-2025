@@ -213,9 +213,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _visualNovelCanvas: {fileID: 1003746893}
   _kitchenView: {fileID: 1214847048}
-  _balanceHappy: {fileID: 2800000, guid: 614c5e52d3497eb4e8bf26a9a0faf599, type: 3}
-  _balanceNeutral: {fileID: 2800000, guid: 1de7c3d3fd6e2804d86d60cb1f24fce2, type: 3}
-  _balanceAngry: {fileID: 2800000, guid: 19d0deb4f59274542acafed084b2a754, type: 3}
+  _balanceHappy: {fileID: -4103835498642656087, guid: 614c5e52d3497eb4e8bf26a9a0faf599, type: 3}
+  _balanceNeutral: {fileID: 7812461707713793462, guid: 1de7c3d3fd6e2804d86d60cb1f24fce2, type: 3}
+  _balanceAngry: {fileID: 3723095817510355691, guid: 19d0deb4f59274542acafed084b2a754, type: 3}
 --- !u!1 &89116946
 GameObject:
   m_ObjectHideFlags: 0

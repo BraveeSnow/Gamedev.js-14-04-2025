@@ -14,11 +14,12 @@ public class GameController : MonoBehaviour
     private AudioSource _dateAudio;
     private AudioSource _kitchenAudio;
     private Image _balanceBar;
+    private Image _balanceBarFill;
 
     // State
-    [SerializeField] private Texture2D _balanceHappy;
-    [SerializeField] private Texture2D _balanceNeutral;
-    [SerializeField] private Texture2D _balanceAngry;
+    [SerializeField] private Sprite _balanceHappy;
+    [SerializeField] private Sprite _balanceNeutral;
+    [SerializeField] private Sprite _balanceAngry;
 
     private void Start()
     {
@@ -26,12 +27,27 @@ public class GameController : MonoBehaviour
 
         _dateAudio = _visualNovelCanvas.GetComponent<AudioSource>();
         _kitchenAudio = _kitchenView.GetComponent<AudioSource>();
-        _balanceBar = GameObject.Find("BalanceBarFill").GetComponent<Image>();
+        _balanceBar = GameObject.Find("BalanceBar").GetComponent<Image>();
+        _balanceBarFill = GameObject.Find("BalanceBarFill").GetComponent<Image>();
     }
 
     private void Update()
     {
-        _balanceBar.fillAmount -= _dateAngerRate * Time.deltaTime;
+        _balanceBarFill.fillAmount -= _dateAngerRate * Time.deltaTime;
+
+        // Update bar image when neccessary
+        if (_balanceBarFill.fillAmount > 0.67F)
+        {
+            _balanceBar.sprite = _balanceHappy;
+        }
+        else if (_balanceBarFill.fillAmount > 0.33F)
+        {
+            _balanceBar.sprite = _balanceNeutral;
+        }
+        else
+        {
+            _balanceBar.sprite = _balanceAngry;
+        }
     }
 
     public void SwitchScreen()
