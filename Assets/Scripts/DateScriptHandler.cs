@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using Newtonsoft.Json;
 using TMPro;
+using UnityEngine.UI;
 
 public class DateScriptHandler : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class DateScriptHandler : MonoBehaviour
     [Header("Object References")]
     [SerializeField] private TextMeshProUGUI _dialogueText;
     [SerializeField] private List<GameObject> _responseButtons;
+    [SerializeField] private GameObject _excuseInitButton;
     [SerializeField] private List<GameObject> _excuseButtons;
 
     [Header("Adjustable Fields")]
@@ -39,6 +41,9 @@ public class DateScriptHandler : MonoBehaviour
 
         ShowResponseButtons(false);
         LoadRandomScript();
+
+        // Hook events
+        KitchenController.OnOrderAdded += OnOrderAdded;
     }
 
     public void LoadRandomScript()
@@ -78,6 +83,8 @@ public class DateScriptHandler : MonoBehaviour
     // Callback for excuse button, do not directly call
     public void ExcusePlayer()
     {
+        _excuseInitButton.GetComponent<Image>().color = Color.white;
+
         // Toggle between response panel and excuse panel
         if (_excuseButtons[0].activeInHierarchy)
         {
@@ -143,6 +150,11 @@ public class DateScriptHandler : MonoBehaviour
         // TODO: handle balance score
 
         GameController.Instance.SwitchScreen();
+    }
+
+    private void OnOrderAdded(KitchenController.Order order)
+    {
+        _excuseInitButton.GetComponent<Image>().color = Color.red;
     }
 
     private void ShowResponseButtons(bool toShow)

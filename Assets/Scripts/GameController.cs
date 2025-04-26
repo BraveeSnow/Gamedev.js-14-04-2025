@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour
 {
     internal static GameController Instance;
-    private static float _dateAngerRate = 0.1F;
+    private static float _dateAngerRate = 0.01F;
     private static float _scoreConvRate = 0.1F;
     private static float _audioTransitionDelay = 0.01F;
 

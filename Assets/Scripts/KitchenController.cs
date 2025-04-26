@@ -1,7 +1,4 @@
-using System;
 using System.Collections;
-using System.Net;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class KitchenController : MonoBehaviour
@@ -95,9 +92,9 @@ public class KitchenController : MonoBehaviour
         while(true)
         {
             yield return new WaitUntil(() => currentOrder == null);
-            float waitTime = UnityEngine.Random.Range(minimumOrderTime, maximumOrderTime);
+            float waitTime = Random.Range(minimumOrderTime, maximumOrderTime);
             yield return new WaitForSeconds(waitTime);
-            Order order = new Order(UnityEngine.Random.Range(300, 500), UnityEngine.Random.Range(minimumWaitTime, maximumWaitTime));
+            Order order = new Order(Random.Range(300, 500), Random.Range(minimumWaitTime, maximumWaitTime));
             currentOrder = order;
             if (OnOrderAdded != null) OnOrderAdded.Invoke(currentOrder);
         }
