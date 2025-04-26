@@ -5,6 +5,12 @@ Sour Gummy - https://fonts.google.com/specimen/Sour+Gummy
 License - OFL-1.1
 
 
+SPRITES
+-------
+
+Dining Table - Anna Sondergaard
+
+
 MUSIC
 -----
 

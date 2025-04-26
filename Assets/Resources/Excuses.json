@@ -1,0 +1,27 @@
+{
+  "food": [
+    "I think something I ate didn't sit right. I'll be back in a sec.",
+    "I just want to ask if they can leave out an ingredient I'm allergic to.",
+    "They forgot a part of my order. I'm gonna go sort it out real quick."
+  ],
+  "service": [
+    "I'll see if I can speed things up a little. Be right back!",
+    "This table is getting a bit messy. I'll grab some serviettes.",
+    "I just want to double-check something with the staff. I'll be right back."
+  ],
+  "ambience": [
+    "That light above us is flickering and it's driving me nuts. I'm gonna go mention it.",
+    "It's getting a bit too warm for me in here. I'll step outside for a second and come back.",
+    "I need a moment for some fresh air. This place is beautiful, but it's a little overwhelming."
+  ],
+  "appearance": [
+    "I just need to fix something in the mirror. Be right back!",
+    "I spilled a bit of sauce on myself — gonna clean it up quickly.",
+    "My contact lens is acting up. One sec, I'll go fix it."
+  ],
+  "social": [
+    "I think I need to quickly step out and clear my head. I'll be a sec.",
+    "I promised I'd check my phone only once — I'll do it outside real fast.",
+    "Sorry! Just remembered I forgot to respond to something important. Two minutes!"
+  ]
+}
