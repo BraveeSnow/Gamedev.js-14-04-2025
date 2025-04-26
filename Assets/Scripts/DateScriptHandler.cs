@@ -71,7 +71,8 @@ public class DateScriptHandler : MonoBehaviour
         _previousAttribute = _currentScript.attribute;
         StartCoroutine(AnimateText(score > 0 ? _currentScript.goodResponse : _currentScript.badResponse, false));
 
-        // TODO: make score impact balance bar
+        // make score impact balance bar
+        GameController.Instance.RegisterPlayerScore(score);
     }
 
     // Callback for excuse button, do not directly call

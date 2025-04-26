@@ -1,22 +1,27 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     internal static GameController Instance;
-    private static float _dateAngerRate = 0.01F;
+    private static float _dateAngerRate = 0.1F;
+    private static float _scoreConvRate = 0.1F;
     private static float _audioTransitionDelay = 0.01F;
 
     // Game object references
+    [Header("Game Object References")]
     [SerializeField] private GameObject _visualNovelCanvas;
     [SerializeField] private GameObject _kitchenView;
+    [SerializeField] private GameObject _gameOverPanel;
     private AudioSource _dateAudio;
     private AudioSource _kitchenAudio;
     private Image _balanceBar;
     private Image _balanceBarFill;
 
     // State
+    [Header("Sprites")]
     [SerializeField] private Sprite _balanceHappy;
     [SerializeField] private Sprite _balanceNeutral;
     [SerializeField] private Sprite _balanceAngry;
@@ -48,6 +53,11 @@ public class GameController : MonoBehaviour
         {
             _balanceBar.sprite = _balanceAngry;
         }
+
+        if (_balanceBarFill.fillAmount <= 0)
+        {
+            SignalGameOver();
+        }
     }
 
     public void SwitchScreen()
@@ -55,6 +65,23 @@ public class GameController : MonoBehaviour
         Canvas vnCanvas = _visualNovelCanvas.GetComponent<Canvas>();
         vnCanvas.enabled = !vnCanvas.enabled;
         StartCoroutine(TransitionAudio());
+    }
+
+    public void RegisterPlayerScore(int score)
+    {
+        _balanceBarFill.fillAmount += score * _scoreConvRate;
+    }
+
+    private void SignalGameOver()
+    {
+        _dateAudio.mute = true;
+        _kitchenAudio.mute = true;
+        _gameOverPanel.SetActive(true);
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 
     private IEnumerator TransitionAudio()
