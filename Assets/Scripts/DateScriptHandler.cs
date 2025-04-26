@@ -1,9 +1,9 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Newtonsoft.Json;
 using TMPro;
-using System.Collections;
 
 public class DateScriptHandler : MonoBehaviour
 {
@@ -71,7 +71,8 @@ public class DateScriptHandler : MonoBehaviour
         _previousAttribute = _currentScript.attribute;
         StartCoroutine(AnimateText(score > 0 ? _currentScript.goodResponse : _currentScript.badResponse, false));
 
-        // TODO: make score impact balance bar
+        // make score impact balance bar
+        GameController.Instance.RegisterPlayerScore(score);
     }
 
     // Callback for excuse button, do not directly call
@@ -139,7 +140,9 @@ public class DateScriptHandler : MonoBehaviour
 
     public void ConfirmExcuse(int choice)
     {
-        Debug.Log(_previousAttribute == _currentExcuses[choice].attribute);
+        // TODO: handle balance score
+
+        GameController.Instance.SwitchScreen();
     }
 
     private void ShowResponseButtons(bool toShow)

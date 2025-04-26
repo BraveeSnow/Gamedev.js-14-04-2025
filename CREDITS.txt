@@ -10,6 +10,10 @@ SPRITES
 
 Dining Table - Anna Sondergaard
 
+Date Sprites - Anna Sondergaard
+
+Smoke Particles - Anna Sondergaard
+
 
 MUSIC
 -----
