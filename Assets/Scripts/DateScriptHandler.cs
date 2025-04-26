@@ -139,7 +139,9 @@ public class DateScriptHandler : MonoBehaviour
 
     public void ConfirmExcuse(int choice)
     {
-        Debug.Log(_previousAttribute == _currentExcuses[choice].attribute);
+        // TODO: handle balance score
+
+        GameController.Instance.SwitchScreen();
     }
 
     private void ShowResponseButtons(bool toShow)
