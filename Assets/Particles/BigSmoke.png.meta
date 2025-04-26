@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e60f6a3e1a550e844a24e851d196d0f1
+guid: 065ddd0542e680646b4d69c1c24dfd0a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3451699440861859892
-    second: MainMenu_0
+      213: 2443175121623824189
+    second: bigsmoke_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MainMenu_0
+      name: bigsmoke_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 960
-        height: 540
+        x: 87
+        y: 16
+        width: 270
+        height: 322
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ccfa30c75a91910d0800000000000000
-      internalID: -3451699440861859892
+      spriteID: d37b57024d6e7e120800000000000000
+      internalID: 2443175121623824189
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MainMenu_0: -3451699440861859892
+      bigsmoke_0: 2443175121623824189
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

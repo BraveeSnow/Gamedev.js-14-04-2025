@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e60f6a3e1a550e844a24e851d196d0f1
+guid: 1de7c3d3fd6e2804d86d60cb1f24fce2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3451699440861859892
-    second: MainMenu_0
+      213: 7812461707713793462
+    second: progressbarneutral_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MainMenu_0
+      name: progressbarneutral_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 12
         y: 0
-        width: 960
-        height: 540
+        width: 670
+        height: 152
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ccfa30c75a91910d0800000000000000
-      internalID: -3451699440861859892
+      spriteID: 6bd4f9de7807b6c60800000000000000
+      internalID: 7812461707713793462
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MainMenu_0: -3451699440861859892
+      progressbarneutral_0: 7812461707713793462
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

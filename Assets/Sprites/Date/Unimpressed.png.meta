@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: e60f6a3e1a550e844a24e851d196d0f1
+guid: 36a04e83651105a4aa8aa3c4ace1e064
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3451699440861859892
-    second: MainMenu_0
+      213: 7380250874537068266
+    second: dateumimpressed_0
+  - first:
+      213: 4101232313826762008
+    second: dateumimpressed_1
+  - first:
+      213: -7639308714531974597
+    second: dateumimpressed_2
+  - first:
+      213: 7125778792800024132
+    second: dateumimpressed_3
+  - first:
+      213: -7384577616477637846
+    second: dateumimpressed_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MainMenu_0
+      name: dateumimpressed_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 960
-        height: 540
+        x: 207
+        y: 532
+        width: 20
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +140,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ccfa30c75a91910d0800000000000000
-      internalID: -3451699440861859892
+      spriteID: ae64c02711beb6660800000000000000
+      internalID: 7380250874537068266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dateumimpressed_1
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 532
+        width: 31
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81d5ff66f018ae830800000000000000
+      internalID: 4101232313826762008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dateumimpressed_2
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 523
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3296cce239bbf590800000000000000
+      internalID: -7639308714531974597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dateumimpressed_3
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 536
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4467bdcde0ad3e260800000000000000
+      internalID: 7125778792800024132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dateumimpressed_4
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 79
+        width: 275
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a23bc8178c5b48990800000000000000
+      internalID: -7384577616477637846
       vertices: []
       indices: 
       edges: []
@@ -148,7 +248,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MainMenu_0: -3451699440861859892
+      dateumimpressed_0: 7380250874537068266
+      dateumimpressed_1: 4101232313826762008
+      dateumimpressed_2: -7639308714531974597
+      dateumimpressed_3: 7125778792800024132
+      dateumimpressed_4: -7384577616477637846
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
