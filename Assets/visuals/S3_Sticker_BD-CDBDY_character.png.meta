@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      S3_Sticker_BD-CDBDY_character_0: -4003223000845300777
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

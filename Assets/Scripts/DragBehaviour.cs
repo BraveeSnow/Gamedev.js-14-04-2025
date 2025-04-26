@@ -13,10 +13,14 @@ public class DragBehaviour : MonoBehaviour
 
     public BoxCollider2D trashCollider;
     public CircleCollider2D plateCollider;
+    public BoxCollider2D grillCollider;
 
     public GameObject shadowObject;
 
     private CookBehaviour cookBehaviour;
+
+    public delegate bool FullfillOrder(float doneness);
+    public static event FullfillOrder OnFullfillOrder;
 
 
     private void Awake()
@@ -58,6 +62,11 @@ public class DragBehaviour : MonoBehaviour
         else if (collider.IsTouching(plateCollider))
         {
             resetMeat();
+            if(OnFullfillOrder != null)
+            {
+                bool success = OnFullfillOrder.Invoke(cookBehaviour.doneness);
+                //ToDo: IDK play like a sound if its good or bad?
+            }
         }
     }
 
@@ -70,7 +79,14 @@ public class DragBehaviour : MonoBehaviour
     private void SetDragging(bool value)
     {
         dragging = value;
-        cookBehaviour.SetCooking(!value);
+        if (!value && collider.IsTouching(grillCollider))
+        {
+            cookBehaviour.SetCooking(true);
+        }
+        else
+        {
+            cookBehaviour.SetCooking(false);
+        }
     }
 
     private void LateUpdate()
