@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class CookBehaviour : MonoBehaviour
 {
+
+    public delegate void FoodBurned();
+    public static event FoodBurned OnFoodBurned;
+
     public SpriteRenderer cookedSprite;
     public SpriteRenderer burntSprite;
 
@@ -14,7 +18,7 @@ public class CookBehaviour : MonoBehaviour
     /// </summary>
     public bool cooking;
 
-    private float doneness;
+    public float doneness;
     private readonly float idealdoneness = 350;
     private readonly float maxdoneness = 700;
 
@@ -53,5 +57,10 @@ public class CookBehaviour : MonoBehaviour
         doneness = value;
         cookedSprite.color = new Color(1, 1, 1, Mathf.Min(doneness / idealdoneness, 1));
         burntSprite.color = new Color(1, 1, 1, Mathf.Min((doneness - idealdoneness) / maxdoneness, 1));
+
+        if(doneness >= maxdoneness)
+        {
+            if(OnFoodBurned != null) OnFoodBurned.Invoke();
+        }
     }
 }

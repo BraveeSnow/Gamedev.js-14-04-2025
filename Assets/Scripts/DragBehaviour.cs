@@ -19,6 +19,9 @@ public class DragBehaviour : MonoBehaviour
 
     private CookBehaviour cookBehaviour;
 
+    public delegate bool FullfillOrder(float doneness);
+    public static event FullfillOrder OnFullfillOrder;
+
 
     private void Awake()
     {
@@ -59,6 +62,11 @@ public class DragBehaviour : MonoBehaviour
         else if (collider.IsTouching(plateCollider))
         {
             resetMeat();
+            if(OnFullfillOrder != null)
+            {
+                bool success = OnFullfillOrder.Invoke(cookBehaviour.doneness);
+                //ToDo: IDK play like a sound if its good or bad?
+            }
         }
     }
 
